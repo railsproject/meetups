@@ -1,0 +1,7 @@
+class Createphoto < ActiveRecord::Migration
+  def change
+       create_table :photo do |t|
+      
+     end
+  end
+end

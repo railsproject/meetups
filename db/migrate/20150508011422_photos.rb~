@@ -1,0 +1,7 @@
+class Photo < ActiveRecord::Migration
+  def change
+     create_table :photo do |t|
+      t.integar :id
+     end
+  end
+end

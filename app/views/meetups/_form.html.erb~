@@ -25,10 +25,34 @@
   </div>
   <div class="field">
     <%= f.label :lat %><br>
-    <%= f.text_field :lat %>
+    <%= f.hidden_field :lat , :value => 5 %>
+    
+     
   </div>
-  
+  <div class="field">
+    <%= f.label :long %><br>
+    <%= f.hidden_field :lat , :value => 5 %>
+    
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
