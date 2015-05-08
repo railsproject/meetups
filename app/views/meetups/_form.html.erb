@@ -15,18 +15,53 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :disc %><br>
-    <%= f.text_area :disc %>
-  </div>
+
+
+			<div class="form-group">
+				<div class="col-sm-2" >
+					<%= f.label :title %>
+				</div>
+			    	<div class="col-sm-10">
+					<%= f.text_field :title, class: 'form-control' %><br />
+				</div>
+			  </div>
+<br />
+
+			<div class="form-group">
+				<div class="col-sm-2" >
+					<%= f.label :user_id %>
+				</div>
+			    	<div class="col-sm-10">
+					<%= f.text_field :user_id, class: 'form-control' %><br />
+				</div>
+			  </div>
+
+
+
+  
+<br />
+
+			<div class="form-group">
+				<div class="col-sm-2" >
+					<%= f.label :disc %>
+				</div>
+			    	<div class="col-sm-10">
+					<%= f.text_area :disc, class: 'form-control' %><br />
+				</div>
+			  </div>
+
+
+<br />
+
+
+
+
+			
+
+
+
+
+
   <div class="field">
    
     <%= f.hidden_field :lat %>
@@ -34,14 +69,37 @@
   <div class="field">
    
     <%= f.hidden_field :long %>
-     <%= f.label :country %><br>
-       <%= f.text_field :country  %>
+
+
+
+			<div class="form-group">
+				<div class="col-sm-2" >
+					<%= f.label :country %>
+				</div>
+			    	<div class="col-sm-10">
+					<%= f.text_field :country, class: 'form-control'  %><br />
+				</div>
+			  </div>
+
+
+
+
+     <br>
+       
 
   </div>
   
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+			<div class="form-group">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-11 actions">
+					<%= f.submit 'Submit !' , class: 'btn btn-success'%>
+					
+				</div>
+			    
+			  </div>
+
 <% end %>
 
 

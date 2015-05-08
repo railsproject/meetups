@@ -8,7 +8,8 @@ class MeetupsController < ApplicationController
   end
 
 
-  def home 
+  def home
+    
 	redirect_to :controller => "meetups_controller", :action => "home"
  	return
   end
