@@ -1,0 +1,145 @@
+<head>
+  <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
+</head>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Meetups</h1>
+
+<table id="myTable">
+ 
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+     
+      <th>Disc</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meetups.each do |meetup| %>
+      <tr>
+        <td><%= meetup.title %></td>
+        <td><%= meetup.user %></td>
+        <td><%= meetup.disc %></td>
+        <td><%= meetup.lat %></td>
+        <td><%= meetup.long %></td>
+        <td><%= link_to 'Show', meetup %></td>
+        <td><%= link_to 'Edit', edit_meetup_path(meetup) %></td>
+        <td><%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meetup', new_meetup_path %>
+ 
+
+<script>
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+function showPosition(position) {
+ 
+   current_lat = position.coords.latitude ;
+    current_long = position.coords.longitude ;
+   // console.log(current_lat);
+
+
+
+    <% @meetups.each do |meetup| %>
+      
+       var lat = <%= meetup.lat %> ;
+        var long = <%= meetup.long %> ;
+    d=  distance(lat,long,(current_lat),(current_long)); 
+console.log(d);
+if (d < 5)
+
+{
+
+ var table = document.getElementById("myTable");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+   
+  //  var cell4= row.insertCell(1);
+    // var cell5 = row.insertCell(4);
+    // var cell6 = row.insertCell(5);
+
+
+    cell1.innerHTML = "<%= meetup.title %>";
+    //document.write("<%= link_to 'Show', meetup %>") ;
+// cell5.innerHTML = <%= link_to 'Edit', edit_meetup_path(meetup) %>;
+//     cell6.innerHTML = <%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %>;
+
+
+
+
+  
+}
+
+
+
+      console.log("lat:"+ lat);
+            console.log("long:"+ long);
+                  console.log("cur_lat:"+ (current_lat));
+
+      console.log("cur_long:"+ (current_long));
+Math.round
+
+    <% end %>
+
+}
+
+
+
+
+
+
+
+
+
+function distance(lat1, lon1, lat2, lon2 ) {
+
+    var radlat1 = Math.PI * lat1/180
+
+    var radlat2 = Math.PI * lat2/180
+
+    var radlon1 = Math.PI * lon1/180
+
+    var radlon2 = Math.PI * lon2/180
+
+    var theta = lon1-lon2
+
+    var radtheta = Math.PI * theta/180
+
+    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+
+    dist = Math.acos(dist)
+
+    dist = dist * 180/Math.PI
+
+    dist = dist * 60 * 1.1515
+
+     dist = dist * 1.609344 ;
+console.log(dist);
+
+    return dist
+
+}
+
+
+
+
+</script>

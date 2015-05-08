@@ -29,15 +29,12 @@
   </div>
   <div class="field">
 
-    <%= f.label :lat %><br>
+   
     <%= f.hidden_field :lat , :value => 5 %>
     
      
   </div>
   <div class="field">
-    <%= f.label :long %><br>
-    <%= f.hidden_field :lat , :value => 5 %>
-
    
     <%= f.hidden_field :lat %>
   </div>
@@ -54,14 +51,7 @@
   </div>
 <% end %>
 
-
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 
 
 <script >
@@ -69,51 +59,45 @@ var x = document.getElementById("meetup_lat");
 var y = document.getElementById("meetup_long");
 var z = document.getElementById("meetup_country");
 
-  z.onchange = function(){
+z.onchange = function(){
 
 
 var address = z.value;
 var geocoder = new google.maps.Geocoder();
 
 geocoder.geocode( { 'address': address}, function(results, status) {
-  var location = results[0].geometry.location;
-  x.value = location.lat();
-    y.value = location.lng();
+var location = results[0].geometry.location;
+x.value = location.lat();
+y.value = location.lng();
 
 });
 
-  };
+};
 
 
-   if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition);
+} else {
+x.innerHTML = "Geolocation is not supported by this browser.";
 }
+// z.setAttribute("onChange", ch());
 
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;	
-}
-</script>
+console.log("hi");
 
-   // z.setAttribute("onChange", ch());
-
-function showPosition(position) {
-  console.log("hi");
-
-  console.log(position.coords.latitude);
-    x.value = position.coords.latitude ;
-    y.value = position.coords.longitude ;
-    console.log(position.coords.longitude);
-   // console.log(geoplugin_city());
-   console.log(geoplugin_countryName());
-    z.innerHTML = geoplugin_countryName() ;
-    z.value = geoplugin_countryName() ;
+console.log(position.coords.latitude);
+x.value = position.coords.latitude ;
+y.value = position.coords.longitude ;
+console.log(position.coords.longitude);
+// console.log(geoplugin_city());
+console.log(geoplugin_countryName());
+z.innerHTML = geoplugin_countryName() ;
+z.value = geoplugin_countryName() ;
 
 
 }
 </script>
+
+
+
 

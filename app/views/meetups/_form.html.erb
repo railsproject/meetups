@@ -28,16 +28,6 @@
     <%= f.text_area :disc %>
   </div>
   <div class="field">
-
-    <%= f.label :lat %><br>
-    <%= f.hidden_field :lat , :value => 5 %>
-    
-     
-  </div>
-  <div class="field">
-    <%= f.label :long %><br>
-    <%= f.hidden_field :lat , :value => 5 %>
-
    
     <%= f.hidden_field :lat %>
   </div>
@@ -54,12 +44,6 @@
   </div>
 <% end %>
 
-
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 
@@ -85,20 +69,11 @@ geocoder.geocode( { 'address': address}, function(results, status) {
   };
 
 
-   if (navigator.geolocation) {
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
-
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;	
-}
-</script>
-
    // z.setAttribute("onChange", ch());
 
 function showPosition(position) {
@@ -116,4 +91,3 @@ function showPosition(position) {
 
 }
 </script>
-

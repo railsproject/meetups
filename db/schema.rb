@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150508025512) do
+
   create_table "comments", force: :cascade do |t|
     t.text     "body",       limit: 65535
     t.integer  "user_id",    limit: 4
