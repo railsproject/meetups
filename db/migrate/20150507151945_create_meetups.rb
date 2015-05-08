@@ -4,8 +4,8 @@ class CreateMeetups < ActiveRecord::Migration
       t.string :title
       t.references :user, index: true, foreign_key: true
       t.text :disc
-      t.integer :lat
-      t.integer :long
+      t.float :lat
+      t.float :long
 
       t.timestamps null: false
     end

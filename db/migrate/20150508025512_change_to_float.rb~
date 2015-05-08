@@ -1,0 +1,5 @@
+class ChangeToFloat < ActiveRecord::Migration
+  def change
+change_column :meetups, :column_name,  :date
+  end
+end

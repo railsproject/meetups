@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507154840) do
+ActiveRecord::Schema.define(version: 20150508025512) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body",       limit: 65535
@@ -39,10 +39,11 @@ ActiveRecord::Schema.define(version: 20150507154840) do
     t.string   "title",      limit: 255
     t.integer  "user_id",    limit: 4
     t.text     "disc",       limit: 65535
-    t.integer  "lat",        limit: 4
-    t.integer  "long",       limit: 4
+    t.float    "lat",        limit: 24
+    t.float    "long",       limit: 24
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "country",    limit: 255
   end
 
   add_index "meetups", ["user_id"], name: "index_meetups_on_user_id", using: :btree
