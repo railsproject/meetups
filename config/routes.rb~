@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
  
   resources :comments
   resources :tags
@@ -8,26 +7,22 @@ Rails.application.routes.draw do
   resources :photos
   resources :events 
 end
-=======
-  resources :comments
-  resources :events
-  resources :tags
-  resources :meetups
-  resources :meetups
-  resources :meetups
-  resources :users
+
+
+
+
+# these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
 
 
 
 
 
-
-
-
-resources :meetups do
-  	resources :home
-	end
->>>>>>> cb5117a71f0371d4121c19634f54eb5898ef6d86
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
