@@ -3,13 +3,50 @@
 
 </head>
 
+
+<div class="container">
+<br />
+  <div class="panel panel-default">
+    <div class="Panel-heading">
+      <center>
+        <h1>
+        meetup.namebyId
+        </h1>
+      </center>
+    </div>
+    <div class="panel-body">
+      <center>
+        <a href="#" class="btn btn-danger">Home</a>&nbsp;
+        <a href="#" class="btn btn-danger">Photos</a>&nbsp;
+        <a href="#" class="btn btn-danger">Members</a>&nbsp;
+        <a href="#" class="btn btn-danger">Descussions</a>&nbsp;
+      </center>
+    </div>
+
+  </div>
+
+</div>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Meetups</h1>
 
+<h3> choose range to search within it  </h3>
+
+<select id="range">
+  <option value=5 >5</option>
+  <option value= 10 >10</option>
+  <option value=15>15</option>
+  <option value="anywhere">anywhere</option>
+</select>
+
+
 <table id="myTable">
  
 </table>
+
+==============================================
 <table>
   <thead>
     <tr>
@@ -42,14 +79,68 @@
 <%= link_to 'New Meetup', new_meetup_path %>
  
 
-<script>
 
+<script>
+r=5;
+var range = document.getElementById("range");
+range.onchange = function(){
+r=range.value;
+
+
+console.log(r);
+for(var i = document.getElementById("myTable").rows.length; i > 0;i--)
+{
+document.getElementById("myTable").deleteRow(i -1);
+}
+
+if(r=="anywhere")
+
+{
+
+  <% @meetups.each do |meetup| %>
+      
+       var lat = <%= meetup.lat %> ;
+        var long = <%= meetup.long %> ;
+  
+ var table = document.getElementById("myTable");
+
+
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+   
+   var cell4= row.insertCell(1);
+     var cell5 = row.insertCell(2);
+     var cell6 = row.insertCell(3);
+
+var show='<%= link_to 'Show', meetup %>';
+    cell1.innerHTML = "<%= meetup.title %>";
+     cell4.innerHTML = '<%= link_to 'Show', meetup %>';
+
+ cell5.innerHTML = '<%= link_to 'Edit', edit_meetup_path(meetup) %>';
+     cell6.innerHTML = '<%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %>';
+
+
+    <% end %>
+
+
+
+
+
+}
+
+init();
+  };
+
+init();
+function init(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
 
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
+}
+
 
 function showPosition(position) {
  
@@ -65,23 +156,26 @@ function showPosition(position) {
         var long = <%= meetup.long %> ;
     d=  distance(lat,long,(current_lat),(current_long)); 
 console.log(d);
-if (d < 5)
+if (d < r)
 
 {
 
  var table = document.getElementById("myTable");
+
+
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
    
-  //  var cell4= row.insertCell(1);
-    // var cell5 = row.insertCell(4);
-    // var cell6 = row.insertCell(5);
+   var cell4= row.insertCell(1);
+     var cell5 = row.insertCell(2);
+     var cell6 = row.insertCell(3);
 
-
+var show='<%= link_to 'Show', meetup %>';
     cell1.innerHTML = "<%= meetup.title %>";
-    //document.write("<%= link_to 'Show', meetup %>") ;
-// cell5.innerHTML = <%= link_to 'Edit', edit_meetup_path(meetup) %>;
-//     cell6.innerHTML = <%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %>;
+     cell4.innerHTML = '<%= link_to 'Show', meetup %>';
+
+ cell5.innerHTML = '<%= link_to 'Edit', edit_meetup_path(meetup) %>';
+     cell6.innerHTML = '<%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %>';
 
 
 

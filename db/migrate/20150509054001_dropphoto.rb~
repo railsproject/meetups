@@ -1,0 +1,9 @@
+class Dropphoto < ActiveRecord::Migration
+ 
+  def change
+       delete_table :photos do |t|
+      
+     end
+  end
+
+end

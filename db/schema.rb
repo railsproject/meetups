@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508025512) do
+ActiveRecord::Schema.define(version: 20150509055536) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body",       limit: 65535
@@ -49,11 +49,16 @@ ActiveRecord::Schema.define(version: 20150508025512) do
   add_index "meetups", ["user_id"], name: "index_meetups_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
-    t.string   "picture_file_name",    limit: 255
-    t.string   "picture_content_type", limit: 255
-    t.integer  "picture_file_size",    limit: 4
-    t.datetime "picture_updated_at"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "meetuppic_file_name",    limit: 255
+    t.string   "meetuppic_content_type", limit: 255
+    t.integer  "meetuppic_file_size",    limit: 4
+    t.datetime "meetuppic_updated_at"
+    t.integer  "meetup_id",              limit: 4
   end
+
+  add_index "photos", ["meetup_id"], name: "index_photos_on_meetup_id", using: :btree
 
   create_table "tagmeetups", force: :cascade do |t|
     t.integer  "tag_id",     limit: 4
@@ -109,6 +114,7 @@ ActiveRecord::Schema.define(version: 20150508025512) do
   add_foreign_key "comments", "users"
   add_foreign_key "events", "meetups"
   add_foreign_key "meetups", "users"
+  add_foreign_key "photos", "meetups"
   add_foreign_key "tagmeetups", "meetups"
   add_foreign_key "tagmeetups", "tags"
   add_foreign_key "userevents", "events"

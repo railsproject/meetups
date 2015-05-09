@@ -1,11 +1,19 @@
 class MeetupsController < ApplicationController
-  before_action :set_meetup, only: [:show, :edit, :update, :destroy]
+  before_action :set_meetup, only: [:show, :edit, :update, :destroy, :home]
 
   # GET /meetups
   # GET /meetups.json
   def index
     @meetups = Meetup.all
   end
+
+
+  def home 
+	redirect_to :controller => "meetups_controller", :action => "home"
+ 	return
+  end
+
+
 
   # GET /meetups/1
   # GET /meetups/1.json
@@ -71,4 +79,9 @@ class MeetupsController < ApplicationController
     def meetup_params
       params.require(:meetup).permit(:title, :user_id, :disc, :lat, :long)
     end
+
+
+
+
+    
 end
