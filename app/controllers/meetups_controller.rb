@@ -69,6 +69,21 @@ class MeetupsController < ApplicationController
     end
   end
 
+ def join
+     @join = "false"
+    @meetup=Meetup.find(params[:id])
+    @usermeetup = Usermeetup.new(meetup_id:params[:id],  user_id: 1)
+    respond_to do |format|
+    if @usermeetup.save
+     
+       @join=true  
+    
+       format.html { redirect_to meetup_path(@meetup), notice: 'Event was successfully updated.' }
+    else
+      @join=false
+    end   
+  end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meetup
@@ -80,7 +95,8 @@ class MeetupsController < ApplicationController
       params.require(:meetup).permit(:title, :user_id, :disc, :lat, :long)
     end
 
-
+   
+  
 
 
     

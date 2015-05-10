@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
   def create
     @meetup=Meetup.find(params[:meetup_id])
     @photo =@meetup.photos.new(photo_params)
-
+    
     respond_to do |format|
       if @photo.save
         format.html { redirect_to meetup_photo_path(@meetup,@photo) , notice: 'Photo was successfully created.' }

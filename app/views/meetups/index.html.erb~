@@ -25,7 +25,30 @@
 
   </div>
 
+
+
+
+
+
+
+
+
 </div>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <p id="notice"><%= notice %></p>
@@ -47,7 +70,7 @@
 </table>
 
 ==============================================
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -78,6 +101,7 @@
 
 <%= link_to 'New Meetup', new_meetup_path %>
  
+
 
 
 <script>

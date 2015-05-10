@@ -76,7 +76,13 @@ class EventsController < ApplicationController
     end
   end
 
-  
+  def join
+    @meetup=Meetup.find(params[:meetup_id])
+    respond_to do |format|
+      
+        format.html { redirect_to meetup_event_path(@meetup,@event), notice: 'Event was successfully updated.' }
+      
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

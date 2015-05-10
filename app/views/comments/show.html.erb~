@@ -15,5 +15,5 @@
   <%= @comment.event %>
 </p>
 
-<td><%= link_to 'Edit', edit_meetup_event_comment_path(@meetup,@event,@comment) %></td>
+<td><%= link_to 'Edit', edit_meetup_event_comment_path(@meetup,@event,comment) %></td>
 <%= link_to 'Back', meetup_event_path(@meetup,@event) %>

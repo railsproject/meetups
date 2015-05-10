@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
  
-  resources :comments
+get '/meetups/join/:id', to: 'meetups#join'
+  
   resources :tags
   resources :users
- resources :meetups do
-  resources :photos
-  resources :events 
+  resources :meetups do
+
+  resources :events do 
+    resources :comments  
+  end
+    resources :photos
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
