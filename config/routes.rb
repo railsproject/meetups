@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   resources :users
  resources :meetups do
   resources :photos
-  resources :events 
+   
 end
-
+resource :semindex
+resources :events
 root 'users#index'
 
+get 'semindex/listt'
+post 'list' => 'semindex#listevent'
 
 # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
