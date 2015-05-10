@@ -1,0 +1,9 @@
+<%= form_tag("/list", method: "post") do %>
+  <div class="field">
+    <%= label_tag (:date) %><br>
+    <%= date_field_tag (:date), Date.today.to_s %>
+  </div>
+	<div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

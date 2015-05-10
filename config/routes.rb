@@ -4,6 +4,7 @@ get '/meetups/join/:id', to: 'meetups#join'
   
   resources :tags
   resources :users
+
   resources :meetups do
 
   resources :events do 
@@ -11,6 +12,25 @@ get '/meetups/join/:id', to: 'meetups#join'
   end
     resources :photos
 end
+resource :semindex
+
+root 'users#index'
+
+get 'semindex/listt'
+post 'list' => 'semindex#listevent'
+
+# these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
