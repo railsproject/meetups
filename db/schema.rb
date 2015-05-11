@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509170916) do
+ActiveRecord::Schema.define(version: 20150511044454) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body",       limit: 65535
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150509170916) do
   create_table "users", force: :cascade do |t|
     t.string   "name",                limit: 255
     t.string   "email",               limit: 255
-    t.string   "password",            limit: 255
+    t.string   "password_digest",     limit: 255
     t.string   "gender",              limit: 255
     t.integer  "isadmin",             limit: 4
     t.datetime "created_at",                      null: false
@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(version: 20150509170916) do
     t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size",    limit: 4
     t.datetime "avatar_updated_at"
-    t.string   "password_digest",     limit: 255
   end
 
   add_foreign_key "comments", "events"

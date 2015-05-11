@@ -5366,3 +5366,1226 @@ Processing by UsersController#new as HTML
   Rendered users/_form.html.erb (5.2ms)
   Rendered users/new.html.erb within layouts/application (5.8ms)
 Completed 200 OK in 70ms (Views: 61.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/meetups/5" for 127.0.0.1 at 2015-05-10 23:43:04 +0300
+
+Mysql2::Error (Access denied for user 'root'@'localhost' (using password: YES)):
+  mysql2 (0.3.18) lib/mysql2/client.rb:70:in `connect'
+  mysql2 (0.3.18) lib/mysql2/client.rb:70:in `initialize'
+  activerecord (4.2.1) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  activerecord (4.2.1) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:567:in `retrieve_connection'
+  activerecord (4.2.1) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.1) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.1) lib/active_record/migration.rb:384:in `connection'
+  activerecord (4.2.1) lib/active_record/migration.rb:371:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (20.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (42.6ms)
+
+
+Started GET "/meetups/5" for 127.0.0.1 at 2015-05-10 23:43:33 +0300
+
+Mysql2::Error (Access denied for user 'root'@'localhost' (using password: YES)):
+  mysql2 (0.3.18) lib/mysql2/client.rb:70:in `connect'
+  mysql2 (0.3.18) lib/mysql2/client.rb:70:in `initialize'
+  activerecord (4.2.1) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  activerecord (4.2.1) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:567:in `retrieve_connection'
+  activerecord (4.2.1) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.1) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.1) lib/active_record/migration.rb:384:in `connection'
+  activerecord (4.2.1) lib/active_record/migration.rb:371:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (22.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (55.2ms)
+
+
+Started GET "/meetups/5" for 127.0.0.1 at 2015-05-10 23:44:05 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 1398ms (Views: 1326.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/photos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/meetups.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/semindex.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/scaffolds.self-c51e7865219553525545f9561fbb174d8e8dee95191ad2a39bb9cfab8cd750bf.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:07 +0300
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/jquery-1.11.2.min.self-cc83565074b3fa7f2283f7f4d56b90ad171ede87008448ed5d2e91c50575bed1.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/meetups.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/photos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/semindex.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-05-10 23:44:08 +0300
+
+
+Started GET "/meetups/join/5" for 127.0.0.1 at 2015-05-10 23:44:40 +0300
+Processing by MeetupsController#join as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 5 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `usermeetups` (`meetup_id`, `user_id`, `created_at`, `updated_at`) VALUES (5, 1, '2015-05-10 20:44:40', '2015-05-10 20:44:40')
+  [1m[36m (103.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/meetups/5
+Completed 302 Found in 140ms (ActiveRecord: 105.8ms)
+
+
+Started GET "/meetups/5" for 127.0.0.1 at 2015-05-10 23:44:41 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMeetup Load (0.4ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 468ms (Views: 464.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/meetups/5/photos" for 127.0.0.1 at 2015-05-10 23:45:01 +0300
+Processing by PhotosController#index as HTML
+  Parameters: {"meetup_id"=>"5"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 5 LIMIT 1
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT `photos`.* FROM `photos` WHERE `photos`.`meetup_id` = 5[0m
+  Rendered photos/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 454ms (Views: 414.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/meetups/3/photos" for 127.0.0.1 at 2015-05-10 23:45:07 +0300
+Processing by PhotosController#index as HTML
+  Parameters: {"meetup_id"=>"3"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 3 LIMIT 1
+  [1m[36mPhoto Load (0.6ms)[0m  [1mSELECT `photos`.* FROM `photos` WHERE `photos`.`meetup_id` = 3[0m
+  Rendered photos/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 483ms (Views: 478.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/meetups/4/photos" for 127.0.0.1 at 2015-05-10 23:45:17 +0300
+Processing by PhotosController#index as HTML
+  Parameters: {"meetup_id"=>"4"}
+  [1m[35mMeetup Load (0.4ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 4 LIMIT 1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT `photos`.* FROM `photos` WHERE `photos`.`meetup_id` = 4[0m
+  Rendered photos/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 408ms (Views: 404.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/meetups/4/events" for 127.0.0.1 at 2015-05-10 23:45:25 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"meetup_id"=>"4"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 4 LIMIT 1
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`meetup_id` = 4[0m
+  Rendered events/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 519ms (Views: 498.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/meetups/3/events" for 127.0.0.1 at 2015-05-10 23:45:31 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"meetup_id"=>"3"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 3 LIMIT 1
+  [1m[36mEvent Load (0.8ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`meetup_id` = 3[0m
+  Rendered events/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 465ms (Views: 461.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/meetups/3/events/1" for 127.0.0.1 at 2015-05-10 23:45:35 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"meetup_id"=>"3", "id"=>"1"}
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 3 LIMIT 1[0m
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 3 AND `events`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`event_id` = 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (239.1ms)
+Completed 200 OK in 721ms (Views: 710.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2015-05-10 23:47:54 +0300
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.1ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2015-05-10 23:48:45 +0300
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (36.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-10 23:48:55 +0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 459ms (Views: 458.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-10 23:49:03 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 471ms (Views: 469.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-10 23:49:08 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (112.1ms)
+  Rendered users/new.html.erb within layouts/application (123.5ms)
+Completed 200 OK in 584ms (Views: 582.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-10 23:49:42 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fV1Qlk3s9waKvbh6j2SGL8XXtl9pLJ7dNJOApidArPXBj9YC6XKdHkEAKlY1cSeyC7B5K0FKS1OHmuTbkAUeOw==", "user"=>{"name"=>"mert", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007faefc8397f0 @tempfile=#<Tempfile:/media/merit/01CECD067B890C00/iti/ruby/projectrails/RackMultipart20150510-7128-fmkt84.jpeg>, @original_filename="qq.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"qq.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007faefc817830>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000003a0d6a8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000003a0d2e8 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000003037bd8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-10 23:52:08 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 509ms (Views: 507.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-10 23:52:10 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (6.6ms)
+  Rendered users/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 410ms (Views: 409.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-10 23:54:07 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KurFTfRiFsbQMjtlkAQF0MmjV1NoIgvJFQ/yctwYmY+WOEPZUPx83huPqUkqEaRNB8SYJ0BE3kemBpYPa10rQQ==", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "isadmin"=>"0"}, "commit"=>"Submit !"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (12.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY '' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 13.0ms)
+
+NoMethodError (undefined method `password_digest' for #<User:0x007faf0e0755e8>):
+  app/controllers/users_controller.rb:30:in `block in create'
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000003a0d6a8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000003a0d2e8 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000003037bd8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-10 23:55:31 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 473ms (Views: 471.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-10 23:55:35 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (7.6ms)
+  Rendered users/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 501ms (Views: 499.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-10 23:55:41 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZDOpjhL9ddNFtUKvd580aIbNAFzq1ZJiEqq6WLP/2z/Y4S8atmMfy44I0IPNipX1SKrPKMKzR+yho94lBLpp8Q==", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "isadmin"=>"0"}, "commit"=>"Submit !"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY '' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `password_digest' for #<User:0x007faefc829ff8>):
+  app/controllers/users_controller.rb:30:in `block in create'
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000003a0d6a8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000003a0d2e8 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000003037bd8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-10 23:56:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 847ms (Views: 814.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-10 23:56:56 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (54.0ms)
+  Rendered users/new.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 498ms (Views: 496.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-10 23:57:17 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zbHeT8plx8/rdh7GBhrHGbIs4d9N5kJaLZh4jYv00mhxY1jbbvut1yDLjOq8D2aEfEsuq2WAl9SekRzwPLFgpg==", "user"=>{"name"=>"hhhhh", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007f116a53fa20>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000035dadb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000035da888 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000035c14f0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-10 23:59:03 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (9.9ms)
+  Rendered users/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 492ms (Views: 490.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-10 23:59:30 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Es7jTJp81rZREnobG3SsJzNYiDdh7OPkJZpwPI6kssyuHGXYPuK8rpqv6DehYQ26/T9HQ0mKNmqWkxRBOeEAAg==", "user"=>{"name"=>"mert", "email"=>"mert5@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f116a85e968 @tempfile=#<Tempfile:/media/merit/01CECD067B890C00/iti/ruby/projectrails/RackMultipart20150510-7302-c7g2sd.jpeg>, @original_filename="ssss.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"ssss.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007f116a851038>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000035dadb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000035da888 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000035c14f0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'comments'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `comments`
+  [1m[36m (0.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'meetups'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `meetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'photos'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `photos`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tagmeetups'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `tagmeetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tags'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `tags`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'userevents'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `userevents`
+  [1m[36m (0.7ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'usermeetups'
+[0m
+  [1m[35m (0.5ms)[0m  SHOW CREATE TABLE `usermeetups`
+  [1m[36m (0.8ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 00:02:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 906ms (Views: 871.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 00:03:03 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (67.9ms)
+  Rendered users/new.html.erb within layouts/application (93.2ms)
+Completed 200 OK in 566ms (Views: 563.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 00:03:21 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qmLUQE1nDYpfrcAUT9Ko3vOVJfHvXKZIDzFhZjH/mmcWsFLU6flnkpQQUjj1xwlDPfLqhcc6c8a8OAUbhrooqQ==", "user"=>{"name"=>"hhhhh", "email"=>"mert7@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007f0626567150>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000042c2230 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000042c1d80 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000042a8a88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 00:11:52 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 513ms (Views: 511.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 00:11:57 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.2ms)
+  Rendered users/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 403ms (Views: 402.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 00:12:16 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JXPDhf63uTwuTKjUzi2Hd2Nyp+2faInYhmRB/VtblTKZoUURWinTJOXxOvh0OCbqrRVombcOXFY1bSWA7B4n/A==", "user"=>{"name"=>"jjj", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007f06251bfe18>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000042c2230 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000042c1d80 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000042a8a88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started PUT "/meetupxxxxs/join/console/repl_sessions/9eafb5c41fe284484851fe0431c7653e" for 127.0.0.1 at 2015-05-11 00:15:51 +0300
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 00:16:23 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 450ms (Views: 448.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 00:16:25 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (7.6ms)
+  Rendered users/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 435ms (Views: 434.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 00:16:40 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3y08BguSYHX+wGM3bxqaMpz8Bp6c1zwdLSjSDQTQQ9dj/7qSrwwKbTV98RvVDzuvUpvJ6rSx6ZOeIbZws5XxGQ==", "user"=>{"name"=>"hhhhh", "email"=>"mert5@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007f062634d8d8>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000042c2230 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000042c1d80 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000042a8a88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 00:18:15 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 515ms (Views: 496.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 00:18:17 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (9.1ms)
+  Rendered users/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 412ms (Views: 410.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 00:18:30 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ohvhYcdcSR0D65gb6mR2UqIwNb1eivJYJL4LFVz9KkkeyWf1Y8IjBchWCjdQcdfPbFf6yXbsJ9aXt29o67iYhw==", "user"=>{"name"=>"mert", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007f062531d2d8>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000042c2230 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000042c1d80 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000042a8a88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 00:18:46 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 493ms (Views: 473.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 00:18:48 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (9.2ms)
+  Rendered users/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 407ms (Views: 405.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 00:18:49 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (10.5ms)
+  Rendered users/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 469ms (Views: 467.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 00:19:00 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZOFny+x34KZlGEyZ8GwJsNC545a/wpSLwkVErJX/f3HYM+FfSOmKvq6l3rVKeagtHt4s4pekQQVxTCDRIrrNvw==", "user"=>{"name"=>"mert", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mert@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `password`, `isadmin`, `created_at`, `updated_at`) VALUES ('mert', 'mert@yahoo.com', '12345678', 1, '2015-05-10 21:19:00', '2015-05-10 21:19:00')[0m
+  [1m[35m (144.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 168ms (ActiveRecord: 145.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2015-05-11 00:19:00 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 511ms (Views: 493.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 00:19:01 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 00:19:19 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 466ms (Views: 464.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-11 00:19:24 +0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 437ms (Views: 436.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-05-11 00:19:39 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fbohE7W4wxxDRJLIgkZCrTU8Pgv9bFBV/0ZsxTqfVj/BaKeHESapBIj5AOQ4U+Mw+1vxf9UKhdtMTwi4jdrk8Q==", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'mert@yahoo.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `authenticate' for #<User:0x007f062628a1d0>):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (32.0ms)
+
+
+Started GET "/meetups/5" for 127.0.0.1 at 2015-05-11 07:25:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMeetup Load (0.4ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 5 LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (101.3ms)
+Completed 200 OK in 1364ms (Views: 1269.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 07:25:34 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (112.5ms)
+  Rendered users/new.html.erb within layouts/application (152.8ms)
+Completed 200 OK in 532ms (Views: 530.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 07:25:55 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4hFgmx1qhAoqGUt6PQhFW+5zkOJNBQO36+c6pdZmcm5/4TUFKd0nrHofuxAkmR5eN0pspGn2afSj+LCSkVnrow==", "user"=>{"name"=>"mert", "email"=>"mertmert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `password_digest=' for #<User:0x007f30ba357068>):
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004e15830 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004e15308 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000004e00070 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddPasswordDigestToUsers (20150511044454)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddPasswordDigestToUsers (20150511044454)
+  [1m[35m (223.6ms)[0m  ALTER TABLE `users` CHANGE `password` `password_digest` varchar(255) DEFAULT NULL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150511044454')
+  [1m[36m (36.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'comments'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `comments`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'meetups'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `meetups`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'photos'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `photos`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tagmeetups'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `tagmeetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tags'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `tags`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'userevents'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `userevents`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'usermeetups'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `usermeetups`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 07:47:47 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 787ms (Views: 761.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 07:47:50 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (56.3ms)
+  Rendered users/new.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 429ms (Views: 406.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-11 07:47:57 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (6.6ms)
+  Rendered users/new.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 414ms (Views: 412.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 07:48:15 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uNTYTv9K/BhEjU/VfpAaLsIgRC9hNwkEo0ZDfYryKS8lJI3Qy/1fvhSLv79nAUErGxm4aUXEY0frWclKzc2w4g==", "user"=>{"name"=>"jjj", "email"=>"mertmert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mertmert@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('jjj', 'mertmert@yahoo.com', '$2a$10$EcHmwQ3Ve9JIOb0v8Us9Z.wZd5hOKJa37OgdWyKjcwIFMpZU6gzsy', 1, '2015-05-11 04:48:15', '2015-05-11 04:48:15')[0m
+  [1m[35m (40.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 187ms (ActiveRecord: 40.7ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-05-11 07:48:15 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 400ms (Views: 385.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 07:48:16 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (103.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (20.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (55.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 07:48:49 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 401ms (Views: 399.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 07:48:52 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.8ms)
+  Rendered users/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 378ms (Views: 376.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 07:49:05 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZyMFUftZWeEUvxuaVMEt9Wn5uQBYqnhwefQFpQ8OOzP601DPz+76R0S56/BNUHbwsMBFRnxZEjMx64+SSDGi/g==", "user"=>{"name"=>"merit", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mert@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('merit', 'mert@yahoo.com', '$2a$10$pChxNqic8yPITMZGC2Qgme.N6qprVMmz0xkxpPMbuNWFfdR5qFeHG', 1, '2015-05-11 04:49:05', '2015-05-11 04:49:05')[0m
+  [1m[35m (71.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 162ms (ActiveRecord: 71.7ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-11 07:49:05 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 432ms (Views: 429.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 07:49:05 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (36.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 07:49:08 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 359ms (Views: 357.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-11 07:49:15 +0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 374ms (Views: 372.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-05-11 07:49:30 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"64bOeFXEW/WFqVZ7ns3O4TQ/YdamGbPD3PMCuIRgTW92dpvmYXP4U9WvphGHXJXk7QadkILq2YCU7IiPw1/Uog==", "email"=>"mert@yahoo.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'mert@yahoo.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 91ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 07:49:30 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 430ms (Views: 428.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-05-11 07:49:36 +0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-11 07:49:36 +0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 385ms (Views: 383.8ms | ActiveRecord: 0.0ms)
