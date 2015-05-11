@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
 get '/meetups/join/:id', to: 'meetups#join'
+get '/meetups/:meetup_id/events/:id/join/', to: 'events#join'
   
   resources :tags
   resources :users

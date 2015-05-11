@@ -19,6 +19,12 @@
   <strong>Meetup:</strong>
   <%= @event.meetup %>
 </p>
+<% if  @joinevent %>
+joined |
+<% else  %>
+
+<%= link_to  'Join',:action => "join" , :meetup_id =>@meetup, :id => @event %> |
+<% end %>
 
 <table>
   <thead>

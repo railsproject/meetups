@@ -1,24 +1,20 @@
 Rails.application.routes.draw do
  
 get '/meetups/join/:id', to: 'meetups#join'
+get '/meetups/:meetup_id/events/:id/join/', to: 'events#join'
   
   resources :tags
   resources :users
-<<<<<<< HEAD
+
   resources :meetups do
 
   resources :events do 
     resources :comments  
   end
     resources :photos
-=======
- resources :meetups do
-  resources :photos
-   
->>>>>>> 53d1296f253fb9e37a8f75f3c730a0b9740c0687
 end
 resource :semindex
-resources :events
+
 root 'users#index'
 
 get 'semindex/listt'

@@ -3,17 +3,25 @@
     <div class="Panel-heading">
       <center>
         <h1>
-        meetup.namebyId
+        <%= @meetup.title %>
         </h1>
       </center>
     </div>
     <div class="panel-body">
       <center>
         <a href="#" class="btn btn-danger">Home</a>&nbsp;
-        <%= link_to 'Photos', meetup_photos_path(@meetup) %>&nbsp;
-        <a href="#" class="btn btn-danger">Members</a>&nbsp;
-        <a href="#" class="btn btn-danger">Descussions</a>&nbsp;
-      </center>
+        <%= link_to 'Photos', meetup_photos_path(@meetup), :class => "btn btn-danger" %>&nbsp;
+        <%= link_to 'events', meetup_events_path(@meetup), :class => "btn btn-danger" %>&nbsp;
+   <%= link_to 'Back', meetups_path , :class => "btn btn-danger"  %>&nbsp;
+  
+<% if  @join %>
+<span class = "btn btn-danger">  joined </span>
+<% else  %>
+<%= link_to  'Join',:action => "join" ,:id => @meetup , :class => "btn btn-danger"  %>&nbsp; |
+<% end %>
+
+<%= link_to 'Edit', edit_meetup_path(@meetup) , :class => "btn btn-danger" %>&nbsp; |
+     </center>
     </div>
 
   </div>
@@ -44,13 +52,6 @@
   <strong>Long:</strong>
   <%= @meetup.long %>
 </p>
-<%=  @join.inspect %> 
-@meetup=Meetup.find(params[:id])%>
-<% if @join.inspect == true %>
-joined |
-<% else  %>
-<%= link_to 'Join', "/meetups/join/5"%> |
-<% end %>
 
-<%= link_to 'Edit', edit_meetup_path(@meetup) %> |
-<%= link_to 'Back', meetups_path %>
+
+
