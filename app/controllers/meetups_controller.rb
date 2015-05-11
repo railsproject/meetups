@@ -5,6 +5,9 @@ class MeetupsController < ApplicationController
   # GET /meetups.json
   def index
     @meetups = Meetup.all
+    @tags = Tag.all
+    @tagmeetups = Tagmeetup.all
+
   end
 
 
@@ -27,6 +30,8 @@ class MeetupsController < ApplicationController
   # GET /meetups/new
   def new
     @meetup = Meetup.new
+    @tagmeetup = Tagmeetup.new
+    @tags = Tag.all
   end
 
   # GET /meetups/1/edit
@@ -36,8 +41,16 @@ class MeetupsController < ApplicationController
   # POST /meetups
   # POST /meetups.json
   def create
-    @meetup = Meetup.new(meetup_params)
-
+    # params[:tag_id].split(",").each do |p|
+  @tag = Tag.new(title:params[:title])
+     @tag.save
+#end
+     @meetup = Meetup.new(meetup_params)
+     @meetup.save
+     params[:tag_id].split(",").each do |p|
+     @tagmeetup  = Tagmeetup.new(tag_id:p,meetup_id:@meetup.id);
+     @tagmeetup.save
+    end
     respond_to do |format|
       if @meetup.save
         format.html { redirect_to @meetup, notice: 'Meetup was successfully created.' }
@@ -94,8 +107,14 @@ class MeetupsController < ApplicationController
     def meetup_params
       params.require(:meetup).permit(:title, :user_id, :disc, :lat, :long,:country)
     end
+def tag_params
+      params.require(:tag_id).permit(:tag_id , :newtag_id , :newtag_name)
+    end
 
-   
+   def t_params
+      params.require(:title).permit(:title)
+    end
+
   
 
 

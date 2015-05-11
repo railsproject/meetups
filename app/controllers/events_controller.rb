@@ -88,6 +88,13 @@ class EventsController < ApplicationController
        
   end
   end
+def listevent
+@meetup=Meetup.find(params[:meetup_id]) 
+    
+@events = Event.where("date >= ? AND meetup_id =?", params[:date]+' 00:00:00',@meetup)
+
+render 'events/index' #meetup_events_path(@meetup) 
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event

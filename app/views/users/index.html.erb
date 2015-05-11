@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+
+
+  <% if !(current_user) %>
+    <h1> Login Needed </h1>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  <% else %>
+    <% if current_user.isadmin == 0 %>
+      <script type="text/javascript">
+        window.location.href="notadmin"
+      </script>
+    <% else %>
+  
+
 <h1>Listing Users</h1>
 
 <table>
@@ -16,6 +29,7 @@
 
   <tbody>
     <% @users.each do |user| %>
+      
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
@@ -44,10 +58,16 @@
 
 
 <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  Signed in as  <a href="<%= edit_user_path(current_user.id) %>"><%= current_user.name %></a> | <%= link_to "Logout", '/logout' %>
+ 
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
 
 <%= yield %>
 
+
+
+
+  <% end %>
+  <% end %>

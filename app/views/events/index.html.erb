@@ -28,6 +28,16 @@
   </tbody>
 </table>
 
+<%= form_tag @meetup, :url => {  :controller=>"events" ,:action => "listevent" }, :html => { :multipart => true }  do |f| %>
+  <div class="field">
+    <%= label_tag (:date) %><br>
+    <%= date_field_tag (:date), Date.today.to_s %>
+  </div>
+	<div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+<%= link_to 'allevents', meetup_events_path %>
 <br>
 
 <%= link_to 'New Event', new_meetup_event_path(@meetup) %>

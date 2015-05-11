@@ -79,7 +79,7 @@ class EventsController < ApplicationController
   def join
     @meetup=Meetup.find(params[:meetup_id]) 
     @event =@meetup.events.find(params[:id]) 
-    @event=Event.find(params[:id])
+   
     
     @userevent = Userevent.new(event_id:params[:id],  user_id:  session[:user_id])
     respond_to do |format|
@@ -88,6 +88,13 @@ class EventsController < ApplicationController
        
   end
   end
+def listevent
+@meetup=Meetup.find(params[:meetup_id]) 
+    
+@events = Event.where("date >= ? AND meetup_id =?", params[:date]+' 00:00:00',@meetup)
+
+render 'events/index' #meetup_events_path(@meetup) 
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event

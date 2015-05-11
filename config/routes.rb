@@ -2,7 +2,8 @@ Rails.application.routes.draw do
  
 get '/meetups/join/:id', to: 'meetups#join'
 get '/meetups/:meetup_id/events/:id/join/', to: 'events#join'
-  
+post '/meetups/:meetup_id/', to: 'events#listevent'
+   
   resources :tags
   resources :users
 
@@ -16,9 +17,9 @@ end
 resource :semindex
 
 root 'users#index'
+get '/notadmin' => 'users#notadmin'
 
 get 'semindex/listt'
-post 'list' => 'semindex#listevent'
 
 # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'

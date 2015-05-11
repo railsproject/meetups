@@ -27,11 +27,18 @@
 
 
 
+<input type="text" name="interest" placeholder="Enter your ent">
 
 
 
+<select id ="tags">
+<% @tags.each do |tag| %>
+ 
+        <option value="<%= tag.title %>"><%= tag.title %></option>
 
+    <% end %>
 
+</select>
 
 </div>
 
@@ -98,7 +105,7 @@
 </table>
 
 <br>
-
+<input id = "test" type ="hidden" > 
 <%= link_to 'New Meetup', new_meetup_path %>
  
 
@@ -107,10 +114,16 @@
 <script>
 r=5;
 var range = document.getElementById("range");
-range.onchange = function(){
+var tags = document.getElementById("tags");
+
+
+
+
+tags.onchange = function(){
 r=range.value;
-
-
+t = tags.value;
+counter=0;
+var arr = [];
 console.log(r);
 for(var i = document.getElementById("myTable").rows.length; i > 0;i--)
 {
@@ -120,10 +133,36 @@ document.getElementById("myTable").deleteRow(i -1);
 if(r=="anywhere")
 
 {
+t = tags.value;
+<% @tags.each do |tag| %>
+
+if(t == '<%= tag.title %>')
+     {
+var tagId='<%=tag.id %>'; 
+console.log("1111111111111111111111111111111111111111111111111111111111111111111 " + tagId);
+}
+<%  end %>
+
+<% @tagmeetups.each do |tagmeetup| %>
+ if(tagId == '<%= tagmeetup.tag_id %>')
+ {
+  
+ arr.push('<%= tagmeetup.meetup_id %>');
+
+}
+<%  end %>
+
+console.log("arrrrrrrrrrrrrrrr: "+ arr)
 
   <% @meetups.each do |meetup| %>
-      
-       var lat = <%= meetup.lat %> ;
+ for(counter=0 ; counter<arr.length ; counter++)
+         
+         {
+if(arr[counter] == '<%= meetup.id %>')
+{
+
+
+ var lat = <%= meetup.lat %> ;
         var long = <%= meetup.long %> ;
   
  var table = document.getElementById("myTable");
@@ -144,6 +183,102 @@ var show='<%= link_to 'Show', meetup %>';
      cell6.innerHTML = '<%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %>';
 
 
+
+}
+
+         }
+      
+    <% end %>
+
+
+
+
+
+}
+
+init();
+  };
+
+
+
+
+
+
+
+
+
+
+
+range.onchange = function(){
+r=range.value;
+t = tags.value;
+counter=0;
+var arr = [];
+console.log(r);
+for(var i = document.getElementById("myTable").rows.length; i > 0;i--)
+{
+document.getElementById("myTable").deleteRow(i -1);
+}
+
+if(r=="anywhere")
+
+{
+  alert("anywhere");
+t = tags.value;
+<% @tags.each do |tag| %>
+
+if(t == '<%= tag.title %>')
+     {
+var tagId='<%=tag.id %>'; 
+console.log("1111111111111111111111111111111111111111111111111111111111111111111 " + tagId);
+}
+<%  end %>
+
+<% @tagmeetups.each do |tagmeetup| %>
+ if(tagId == "<%= tagmeetup.tag_id %>")
+ {
+  
+ arr.push('<%= tagmeetup.meetup_id %>');
+
+}
+<%  end %>
+
+console.log("arrrrrrrrrrrrrrrr: "+ arr)
+
+  <% @meetups.each do |meetup| %>
+ for(counter=0 ; counter<arr.length ; counter++)
+         
+         {
+if(arr[counter] == "<%= meetup.id %>")
+{
+
+
+ var lat = <%= meetup.lat %> ;
+        var long = <%= meetup.long %> ;
+  
+ var table = document.getElementById("myTable");
+
+
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+   
+   var cell4= row.insertCell(1);
+     var cell5 = row.insertCell(2);
+     var cell6 = row.insertCell(3);
+
+var show='<%= link_to 'Show', meetup %>';
+    cell1.innerHTML = "<%= meetup.title %>";
+     cell4.innerHTML = '<%= link_to 'Show', meetup %>';
+
+ cell5.innerHTML = '<%= link_to 'Edit', edit_meetup_path(meetup) %>';
+     cell6.innerHTML = '<%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %>';
+
+
+
+}
+
+         }
+      
     <% end %>
 
 
@@ -167,23 +302,83 @@ function init(){
 
 
 function showPosition(position) {
- 
+
    current_lat = position.coords.latitude ;
     current_long = position.coords.longitude ;
    // console.log(current_lat);
 
-
-
+r=range.value;
+t = tags.value;
+counter=0;
+var arr = [];
+console.log(r);
     <% @meetups.each do |meetup| %>
       
        var lat = <%= meetup.lat %> ;
         var long = <%= meetup.long %> ;
     d=  distance(lat,long,(current_lat),(current_long)); 
-console.log(d);
+//console.log(d);
 if (d < r)
 
 {
+ 
+t = tags.value;
+<% @tags.each do |tag| %>
 
+if(t == '<%= tag.title %>')
+     {
+var tagId='<%=tag.id %>'; 
+}
+<%  end %>
+var meetupId='<%= meetup.id %>';
+<% @tagmeetups.each do |tagmeetup| %>
+console.log("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+ if(tagId == "<%= tagmeetup.tag_id %>" && '<%= tagmeetup.meetup_id %>' == meetupId )
+ {
+  
+
+
+/////////////////////////
+
+flag=false;
+
+for (counter=0 ; counter<arrmeetupId.length ; counter++)
+{
+if(arr[counter] == '<%= tagmeetup.meetup_id %>')
+flag=true;
+
+}
+
+if(flag==false)
+{
+ arr.push('<%= tagmeetup.meetup_id %>');
+//alert('<%= tagmeetup.meetup_id %>');
+//alert("push fl arr "+'<%= meetup.title %>')
+
+}
+  ///////
+
+}
+<%  end %>
+
+console.log("arrrrrrrrrrrrrrrr: "+ arr)
+
+}
+
+    <% end %>
+
+  <% @meetups.each do |meetup| %>
+ for(counter=0 ; counter<arr.length ; counter++)
+         
+         {
+if(arr[counter] == "<%= meetup.id %>")
+{
+          console.log("pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp");
+
+
+ var lat = <%= meetup.lat %> ;
+        var long = <%= meetup.long %> ;
+  
  var table = document.getElementById("myTable");
 
 
@@ -203,21 +398,14 @@ var show='<%= link_to 'Show', meetup %>';
 
 
 
-
-  
 }
 
-
-
-      console.log("lat:"+ lat);
-            console.log("long:"+ long);
-                  console.log("cur_lat:"+ (current_lat));
-
-      console.log("cur_long:"+ (current_long));
-Math.round
-
+         }
+      
     <% end %>
 
+
+  
 }
 
 
