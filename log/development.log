@@ -20809,3 +20809,43 @@ Processing by MeetupsController#show as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
   Rendered meetups/show.html.erb within layouts/application (2.8ms)
 Completed 200 OK in 482ms (Views: 476.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/meetups/22" for 127.0.0.1 at 2015-05-12 00:02:02 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mMeetup Load (17.5ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 22 LIMIT 1
+  [1m[36mUsermeetup Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = NULL AND meetup_id = '22') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 491ms (Views: 468.1ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/meetups/" for 127.0.0.1 at 2015-05-12 00:02:08 +0300
+Processing by MeetupsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mMeetup Load (81.5ms)[0m  SELECT `meetups`.* FROM `meetups`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mTagmeetup Load (0.3ms)[0m  SELECT `tagmeetups`.* FROM `tagmeetups`
+  Rendered meetups/index.html.erb within layouts/application (91.7ms)
+Completed 200 OK in 546ms (Views: 462.8ms | ActiveRecord: 82.3ms)
+
+
+Started GET "/meetups/" for 127.0.0.1 at 2015-05-12 00:02:16 +0300
+Processing by MeetupsController#index as HTML
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT `meetups`.* FROM `meetups`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mTagmeetup Load (0.3ms)[0m  SELECT `tagmeetups`.* FROM `tagmeetups`
+  Rendered meetups/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 505ms (Views: 503.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/meetups/" for 127.0.0.1 at 2015-05-12 00:02:46 +0300
+Processing by MeetupsController#index as HTML
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mMeetup Load (0.1ms)[0m  SELECT `meetups`.* FROM `meetups`
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mTagmeetup Load (0.1ms)[0m  SELECT `tagmeetups`.* FROM `tagmeetups`
+  Rendered meetups/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 375ms (Views: 374.3ms | ActiveRecord: 0.6ms)
