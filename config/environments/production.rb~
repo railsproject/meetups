@@ -89,8 +89,8 @@ config.action_mailer.default_url_options = {:host => 'localhost:3000'}
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "engy.elmoshrify@gmail.com", # this should be a real gmail id
-    password: "engy751093" # this should be real password of your gmail id
+    user_name: "mertloka@hotmail.com", # this should be a real gmail id
+    password: "koloakl7elw" # this should be real password of your gmail id
   }
 
 

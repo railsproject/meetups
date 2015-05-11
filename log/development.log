@@ -13527,3 +13527,2519 @@ Processing by MeetupsController#show as HTML
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
   Rendered meetups/show.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 465ms (Views: 462.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/meetups/16/photos" for 127.0.0.1 at 2015-05-11 16:44:51 +0300
+Processing by PhotosController#index as HTML
+  Parameters: {"meetup_id"=>"16"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT `photos`.* FROM `photos` WHERE `photos`.`meetup_id` = 16[0m
+  Rendered photos/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 488ms (Views: 484.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/meetups/16/photos/new" for 127.0.0.1 at 2015-05-11 16:44:53 +0300
+Processing by PhotosController#new as HTML
+  Parameters: {"meetup_id"=>"16"}
+  Rendered photos/_form.html.erb (25.1ms)
+  Rendered photos/new.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 532ms (Views: 520.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/meetups/16/photos" for 127.0.0.1 at 2015-05-11 16:45:01 +0300
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2emUVNalC1mnFFXR4oGi3yy2zg32LavQKdCTtwigPM5C5Jl69styGlD/J1D8uUwKcNtpqOjVJrOUiRtfb4F1kA==", "photo"=>{"meetuppic"=>#<ActionDispatch::Http::UploadedFile:0x007f4322f912c8 @tempfile=#<Tempfile:/media/merit/01CECD067B890C00/iti/ruby/projectrails/RackMultipart20150511-3443-1bsmve6.jpeg>, @original_filename="ssss.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[meetuppic]\"; filename=\"ssss.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "meetup_id"=>"16"}, "commit"=>"Create Photo", "meetup_id"=>"16"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1
+Command :: file -b --mime '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-t71kpb.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc.jpeg[0]'
+Command :: convert '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc.jpeg[0]' -auto-orient -resize "300x300>" '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc20150511-3443-jlbf6i'
+Command :: file -b --mime '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc20150511-3443-jlbf6i'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc.jpeg[0]'
+Command :: convert '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc.jpeg[0]' -auto-orient -resize "100x100>" '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc20150511-3443-1b1yrga'
+Command :: file -b --mime '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-d1njpc20150511-3443-1b1yrga'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/media/merit/01CECD067B890C00/iti/ruby/projectrails/8f60c8102d29fcd525162d02eed4566b20150511-3443-gnong6.jpeg'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `photos` (`meetuppic_file_name`, `meetuppic_content_type`, `meetuppic_file_size`, `meetuppic_updated_at`, `meetup_id`, `created_at`, `updated_at`) VALUES ('ssss.jpeg', 'image/jpeg', 9731, '2015-05-11 13:45:01', 16, '2015-05-11 13:45:02', '2015-05-11 13:45:02')
+  [1m[36m (46.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/meetups/16/photos/1
+Completed 302 Found in 1178ms (ActiveRecord: 47.4ms)
+
+
+Started GET "/meetups/16/photos/1" for 127.0.0.1 at 2015-05-11 16:45:02 +0300
+Processing by PhotosController#show as HTML
+  Parameters: {"meetup_id"=>"16", "id"=>"1"}
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT  `photos`.* FROM `photos` WHERE `photos`.`id` = 1 LIMIT 1
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1[0m
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT  `photos`.* FROM `photos` WHERE `photos`.`meetup_id` = 16 AND `photos`.`id` = 1 LIMIT 1
+  Rendered photos/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 478ms (Views: 471.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/meetups/16/photos" for 127.0.0.1 at 2015-05-11 16:45:05 +0300
+Processing by PhotosController#index as HTML
+  Parameters: {"meetup_id"=>"16"}
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1[0m
+  [1m[35mPhoto Load (0.7ms)[0m  SELECT `photos`.* FROM `photos` WHERE `photos`.`meetup_id` = 16
+  Rendered photos/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 440ms (Views: 436.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/meetups/16/" for 127.0.0.1 at 2015-05-11 16:45:11 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.2ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '16') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 474ms (Views: 470.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/meetups/16/photos" for 127.0.0.1 at 2015-05-11 16:45:13 +0300
+Processing by PhotosController#index as HTML
+  Parameters: {"meetup_id"=>"16"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT `photos`.* FROM `photos` WHERE `photos`.`meetup_id` = 16[0m
+  Rendered photos/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 497ms (Views: 493.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/meetups/16/" for 127.0.0.1 at 2015-05-11 16:45:24 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1
+  [1m[36mUsermeetup Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '16') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 474ms (Views: 468.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/meetups/16/events" for 127.0.0.1 at 2015-05-11 16:46:41 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"meetup_id"=>"16"}
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`meetup_id` = 16
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 437ms (Views: 434.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/meetups/16/" for 127.0.0.1 at 2015-05-11 16:47:11 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mMeetup Load (0.3ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.4ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '16') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 438ms (Views: 432.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/meetups/16/" for 127.0.0.1 at 2015-05-11 16:50:17 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 16 LIMIT 1
+  [1m[36mUsermeetup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '16') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 532ms (Views: 488.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/meetups" for 127.0.0.1 at 2015-05-11 16:50:28 +0300
+Processing by MeetupsController#index as HTML
+  [1m[36mMeetup Load (0.5ms)[0m  [1mSELECT `meetups`.* FROM `meetups`[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered meetups/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 504ms (Views: 501.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/meetups/new" for 127.0.0.1 at 2015-05-11 16:50:32 +0300
+Processing by MeetupsController#new as HTML
+  Rendered meetups/_form.html.erb (7.7ms)
+  Rendered meetups/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 467ms (Views: 465.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meetups" for 127.0.0.1 at 2015-05-11 16:50:41 +0300
+Processing by MeetupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5IsmHIHemHBNzHEaGdRhUDkDEHTbgKfsVFZzkjPF6bsnyG2UmkDIjbcQ0V2X79QHImr5M2Wj/wMCNEmL+5e+A==", "meetup"=>{"title"=>"xxxxxxx", "user_id"=>"1", "disc"=>"aaaaaaaaaaaaa", "lat"=>"31.1926962", "long"=>"29.905866800000002", "country"=>"Egypt"}, "commit"=>"Submit !"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (18.2ms)[0m  INSERT INTO `meetups` (`title`, `user_id`, `disc`, `lat`, `long`, `country`, `created_at`, `updated_at`) VALUES ('xxxxxxx', 1, 'aaaaaaaaaaaaa', 31.1926962, 29.905866800000002, 'Egypt', '2015-05-11 13:50:41', '2015-05-11 13:50:41')
+Mysql2::Error: Cannot add or update a child row: a foreign key constraint fails (`projectrails_development`.`meetups`, CONSTRAINT `fk_rails_1cca9a1107` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)): INSERT INTO `meetups` (`title`, `user_id`, `disc`, `lat`, `long`, `country`, `created_at`, `updated_at`) VALUES ('xxxxxxx', 1, 'aaaaaaaaaaaaa', 31.1926962, 29.905866800000002, 'Egypt', '2015-05-11 13:50:41', '2015-05-11 13:50:41')
+  [1m[36m (46.8ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 65.2ms)
+
+ActiveRecord::InvalidForeignKey (Mysql2::Error: Cannot add or update a child row: a foreign key constraint fails (`projectrails_development`.`meetups`, CONSTRAINT `fk_rails_1cca9a1107` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)): INSERT INTO `meetups` (`title`, `user_id`, `disc`, `lat`, `long`, `country`, `created_at`, `updated_at`) VALUES ('xxxxxxx', 1, 'aaaaaaaaaaaaa', 31.1926962, 29.905866800000002, 'Egypt', '2015-05-11 13:50:41', '2015-05-11 13:50:41')):
+  app/controllers/meetups_controller.rb:42:in `block in create'
+  app/controllers/meetups_controller.rb:41:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (44.9ms)
+
+
+Started POST "/meetups" for 127.0.0.1 at 2015-05-11 16:50:51 +0300
+Processing by MeetupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5IsmHIHemHBNzHEaGdRhUDkDEHTbgKfsVFZzkjPF6bsnyG2UmkDIjbcQ0V2X79QHImr5M2Wj/wMCNEmL+5e+A==", "meetup"=>{"title"=>"xxxxxxx", "user_id"=>"4", "disc"=>"aaaaaaaaaaaaa", "lat"=>"31.1926962", "long"=>"29.905866800000002", "country"=>"Egypt"}, "commit"=>"Submit !"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `meetups` (`title`, `user_id`, `disc`, `lat`, `long`, `country`, `created_at`, `updated_at`) VALUES ('xxxxxxx', 4, 'aaaaaaaaaaaaa', 31.1926962, 29.905866800000002, 'Egypt', '2015-05-11 13:50:51', '2015-05-11 13:50:51')[0m
+  [1m[35m (58.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/meetups/18
+Completed 302 Found in 67ms (ActiveRecord: 59.2ms)
+
+
+Started GET "/meetups/18" for 127.0.0.1 at 2015-05-11 16:50:51 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mMeetup Load (0.5ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 18 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.4ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '18') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 427ms (Views: 422.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/meetups/join/18?class=btn+btn-danger" for 127.0.0.1 at 2015-05-11 16:51:01 +0300
+Processing by MeetupsController#join as HTML
+  Parameters: {"class"=>"btn btn-danger", "id"=>"18"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 18 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `usermeetups` (`meetup_id`, `user_id`, `created_at`, `updated_at`) VALUES (18, 5, '2015-05-11 13:51:01', '2015-05-11 13:51:01')
+  [1m[36m (42.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/meetups/18
+Completed 302 Found in 55ms (ActiveRecord: 43.9ms)
+
+
+Started GET "/meetups/18" for 127.0.0.1 at 2015-05-11 16:51:01 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 18 LIMIT 1
+  [1m[36mUsermeetup Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '18') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 462ms (Views: 457.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/meetups" for 127.0.0.1 at 2015-05-11 16:52:58 +0300
+Processing by MeetupsController#index as HTML
+  [1m[36mMeetup Load (0.6ms)[0m  [1mSELECT `meetups`.* FROM `meetups`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  Rendered meetups/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 491ms (Views: 488.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/meetups/new" for 127.0.0.1 at 2015-05-11 16:53:01 +0300
+Processing by MeetupsController#new as HTML
+  Rendered meetups/_form.html.erb (7.4ms)
+  Rendered meetups/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 422ms (Views: 420.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/meetups" for 127.0.0.1 at 2015-05-11 16:53:08 +0300
+Processing by MeetupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FYFgPqHJhJUmszZBGfCAcJw8PoNAbR4WSvXjY4RA+wGOjG0Qgaf91tFYRMAHyG6lwFGZJl6Vk3X3rGuL42GyXw==", "meetup"=>{"title"=>"ss", "user_id"=>"4", "disc"=>"ssssssssss", "lat"=>"31.1926397", "long"=>"29.9054143", "country"=>"Egypt"}, "commit"=>"Submit !"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `meetups` (`title`, `user_id`, `disc`, `lat`, `long`, `country`, `created_at`, `updated_at`) VALUES ('ss', 4, 'ssssssssss', 31.1926397, 29.9054143, 'Egypt', '2015-05-11 13:53:08', '2015-05-11 13:53:08')[0m
+  [1m[35m (52.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/meetups/19
+Completed 302 Found in 57ms (ActiveRecord: 52.5ms)
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:53:08 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mMeetup Load (0.6ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.7ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 507ms (Views: 502.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:54:21 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mMeetup Load (0.1ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1
+  [1m[36mUsermeetup Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 436ms (Views: 433.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:55:29 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mMeetup Load (0.1ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.1ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 428ms (Views: 425.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:58:15 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1
+  [1m[36mUsermeetup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected '='
+...nd=( link_to  'Join' , {class = "btn btn-danger"} ,:action =...
+...                               ^
+/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected '}', expecting ')'
+...n' , {class = "btn btn-danger"} ,:action => "join" ,:id => @...
+...                               ^
+/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected ',', expecting ')'
+...n-danger"} ,:action => "join" ,:id => @meetup   );@output_bu...
+...                               ^):
+  app/views/meetups/show.html.erb:20: syntax error, unexpected '='
+  app/views/meetups/show.html.erb:20: syntax error, unexpected '}', expecting ')'
+  app/views/meetups/show.html.erb:20: syntax error, unexpected ',', expecting ')'
+  app/controllers/meetups_controller.rb:24:in `show'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.4ms)
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:58:22 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1
+  [1m[36mUsermeetup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected =>
+...d=( link_to  'Join' , {class => "btn btn-danger"} ,:action =...
+...                               ^
+/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected '}', expecting ')'
+...' , {class => "btn btn-danger"} ,:action => "join" ,:id => @...
+...                               ^
+/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected ',', expecting ')'
+...n-danger"} ,:action => "join" ,:id => @meetup   );@output_bu...
+...                               ^):
+  app/views/meetups/show.html.erb:20: syntax error, unexpected =>
+  app/views/meetups/show.html.erb:20: syntax error, unexpected '}', expecting ')'
+  app/views/meetups/show.html.erb:20: syntax error, unexpected ',', expecting ')'
+  app/controllers/meetups_controller.rb:24:in `show'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (27.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (45.9ms)
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:58:29 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1
+  [1m[36mUsermeetup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 520ms (Views: 516.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:29 +0300
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/meetups.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/photos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/semindex.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/scaffolds.self-c51e7865219553525545f9561fbb174d8e8dee95191ad2a39bb9cfab8cd750bf.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/jquery-1.11.2.min.self-cc83565074b3fa7f2283f7f4d56b90ad171ede87008448ed5d2e91c50575bed1.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/meetups.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/photos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/semindex.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:30 +0300
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:31 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:31 +0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-05-11 16:58:31 +0300
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:58:37 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.2ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected '=', expecting =>
+...d=( link_to  'Join' , {:class = "btn btn-danger"} ,:action =...
+...                               ^
+/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected '}', expecting ')'
+...' , {:class = "btn btn-danger"} ,:action => "join" ,:id => @...
+...                               ^
+/media/merit/01CECD067B890C00/iti/ruby/projectrails/app/views/meetups/show.html.erb:20: syntax error, unexpected ',', expecting ')'
+...n-danger"} ,:action => "join" ,:id => @meetup   );@output_bu...
+...                               ^):
+  app/views/meetups/show.html.erb:20: syntax error, unexpected '=', expecting =>
+  app/views/meetups/show.html.erb:20: syntax error, unexpected '}', expecting ')'
+  app/views/meetups/show.html.erb:20: syntax error, unexpected ',', expecting ')'
+  app/controllers/meetups_controller.rb:24:in `show'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (35.8ms)
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 16:59:56 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mMeetup Load (0.3ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.2ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 476ms (Views: 471.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/meetups.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/photos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/scaffolds.self-c51e7865219553525545f9561fbb174d8e8dee95191ad2a39bb9cfab8cd750bf.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/semindex.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:57 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/jquery-1.11.2.min.self-cc83565074b3fa7f2283f7f4d56b90ad171ede87008448ed5d2e91c50575bed1.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/meetups.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/photos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/semindex.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-05-11 16:59:58 +0300
+
+
+Started GET "/meetups/19" for 127.0.0.1 at 2015-05-11 17:10:26 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1
+  [1m[36mUsermeetup Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '19') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered meetups/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 341ms (Views: 337.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/meetups/19/events" for 127.0.0.1 at 2015-05-11 17:10:43 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"meetup_id"=>"19"}
+  [1m[36mMeetup Load (0.3ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mEvent Load (0.6ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`meetup_id` = 19
+  Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 544ms (Views: 520.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/meetups/19/events/new" for 127.0.0.1 at 2015-05-11 17:10:45 +0300
+Processing by EventsController#new as HTML
+  Parameters: {"meetup_id"=>"19"}
+  Rendered events/_form.html.erb (7.4ms)
+  Rendered events/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 475ms (Views: 462.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/meetups/19/events" for 127.0.0.1 at 2015-05-11 17:10:56 +0300
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uNzPmPbHccCKeP4Q38f6f4tgXp7pdWgpx9x2PZNv+BMj0cK21qkIg32TjJHB/xSq1w35O/eN5Up6hf7V9E6xTQ==", "event"=>{"title"=>"uiuio", "body"=>"hhhhhhhhhhhhhh", "date"=>"10/3/2010", "meetup_id"=>"19"}, "commit"=>"Create Event", "meetup_id"=>"19"}
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `events` (`title`, `body`, `date`, `meetup_id`, `created_at`, `updated_at`) VALUES ('uiuio', 'hhhhhhhhhhhhhh', '2010-03-10 00:00:00', 19, '2015-05-11 14:10:56', '2015-05-11 14:10:56')[0m
+  [1m[35m (47.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/meetups/19/events/5
+Completed 302 Found in 59ms (ActiveRecord: 48.4ms)
+
+
+Started GET "/meetups/19/events/5" for 127.0.0.1 at 2015-05-11 17:10:56 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"meetup_id"=>"19", "id"=>"5"}
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  `events`.* FROM `events` WHERE `events`.`id` = 5 LIMIT 1[0m
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 19 AND `events`.`id` = 5 LIMIT 1[0m
+  [1m[35mUserevent Exists (0.5ms)[0m  SELECT  1 AS one FROM `userevents` WHERE (user_id = 5 AND event_id = '5') LIMIT 1
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`event_id` = 5[0m
+  Rendered events/show.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 455ms (Views: 432.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/meetups/19/events/5" for 127.0.0.1 at 2015-05-11 17:11:44 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"meetup_id"=>"19", "id"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`id` = 5 LIMIT 1
+  [1m[36mMeetup Load (0.1ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 19 AND `events`.`id` = 5 LIMIT 1
+  [1m[36mUserevent Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `userevents` WHERE (user_id = 5 AND event_id = '5') LIMIT 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`event_id` = 5
+  Rendered events/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 507ms (Views: 500.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/meetups/19/events/5/join" for 127.0.0.1 at 2015-05-11 17:11:51 +0300
+Processing by EventsController#join as HTML
+  Parameters: {"meetup_id"=>"19", "id"=>"5"}
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 19 AND `events`.`id` = 5 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `userevents` (`event_id`, `user_id`, `created_at`, `updated_at`) VALUES (5, 5, '2015-05-11 14:11:51', '2015-05-11 14:11:51')
+  [1m[36m (40.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/meetups/19/events/5
+Completed 302 Found in 54ms (ActiveRecord: 42.5ms)
+
+
+Started GET "/meetups/19/events/5" for 127.0.0.1 at 2015-05-11 17:11:51 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"meetup_id"=>"19", "id"=>"5"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`id` = 5 LIMIT 1
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 19 AND `events`.`id` = 5 LIMIT 1
+  [1m[36mUserevent Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `userevents` WHERE (user_id = 5 AND event_id = '5') LIMIT 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`event_id` = 5
+  Rendered events/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 515ms (Views: 506.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/meetups/19/events/5" for 127.0.0.1 at 2015-05-11 17:11:53 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"meetup_id"=>"19", "id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  `events`.* FROM `events` WHERE `events`.`id` = 5 LIMIT 1[0m
+  [1m[35mMeetup Load (0.3ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 19 LIMIT 1
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 19 AND `events`.`id` = 5 LIMIT 1[0m
+  [1m[35mUserevent Exists (0.2ms)[0m  SELECT  1 AS one FROM `userevents` WHERE (user_id = 5 AND event_id = '5') LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`event_id` = 5[0m
+  Rendered events/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 466ms (Views: 457.7ms | ActiveRecord: 1.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'comments'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `comments`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'meetups'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `meetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'photos'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `photos`
+  [1m[36m (0.7ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tagmeetups'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `tagmeetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tags'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tags`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'userevents'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `userevents`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'usermeetups'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `usermeetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 17:51:27 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (129.4ms)
+  Rendered users/new.html.erb within layouts/application (138.8ms)
+Completed 200 OK in 482ms (Views: 467.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 17:52:12 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yIiqp5eZwZtopUimv3vn8sBFA1lZ1lWMOQuyDt9onShThaeJt/e42J9OOiehQwknnCik/Ecu2O+EUjrmuEnUdg==", "user"=>{"name"=>"mert", "email"=>"mertloka@hotmail.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (42.0ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mertloka@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('mert', 'mertloka@hotmail.com', '$2a$10$QR8NcK7TebGg7AKKjDNhEulA8GCtMiTKeoRNybY3W3qOeLfiUei7i', 1, '2015-05-11 14:52:12', '2015-05-11 14:52:12')
+  [1m[36m (45.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 88.3ms)
+
+NameError (undefined local variable or method `user_info' for #<UsersController:0x007f43238c0628>):
+  app/controllers/users_controller.rb:31:in `block in create'
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.2ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000003a06d80 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000003a06970 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000039f1700 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 17:54:05 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (7.9ms)
+  Rendered users/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 524ms (Views: 498.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 17:54:24 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ndjN+vpp5rjsHHHpzA8lngStdbPU7yQQc8PjFZ17yekG1cDU2gef+xv3A2jSN8tLWMDSFsoXqXPOmmv9+lqAtw==", "user"=>{"name"=>"mert", "email"=>"mertloka@hotmail.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mertloka@hotmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered users/_form.html.erb (8.3ms)
+  Rendered users/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 574ms (Views: 483.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 17:54:47 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e8gV9Vi+Fni7o89uR2re9Qjou5WjAcEvAYvWQ3zNk+rgxRjbeNBvO0xIve9ZUjAgVIUcML35TEy80l6rG+zatA==", "user"=>{"name"=>"mert", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('mert', 'engy.elmoshrify@gmail.com', '$2a$10$BSWvR9m.9Dcpk/eKn115HOAmj2g15zDei6re4zH4WER5MY/MqG6Ly', 1, '2015-05-11 14:54:47', '2015-05-11 14:54:47')[0m
+  [1m[35m (65.1ms)[0m  COMMIT
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (1.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 381.8ms
+
+Sent mail to engy.elmoshrify@gmail.com (22.9ms)
+Date: Mon, 11 May 2015 17:54:48 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550c2b83ca79_d733fa1919b3eb89005b@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 606ms (ActiveRecord: 66.2ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2015-05-11 17:54:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 510ms (Views: 506.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 17:54:48 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (59.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (35.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 17:59:42 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 468ms (Views: 455.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 17:59:45 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 383ms (Views: 382.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:00:07 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uRyfIVTSMoh6xijfERUU87CxTMhq+jme88wEeo2ppswiEZIPdLxLy40tWl4PLfom7NzrbXQCtP1OlYyS6ojvkg==", "user"=>{"name"=>"engy", "email"=>"engy@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('engy', 'engy@yahoo.com', '$2a$10$R9e1TYBTlFuwzy77BIgbresnVOhZnnnEM74ToOOP/PnU1FNpoPfK6', 1, '2015-05-11 15:00:07', '2015-05-11 15:00:07')
+  [1m[36m (98.0ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 93.4ms
+
+Sent mail to engy.elmoshrify@gmail.com (7.6ms)
+Date: Mon, 11 May 2015 18:00:08 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550c3f824515_d733fa1918f78a8901a8@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 309ms (ActiveRecord: 98.7ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2015-05-11 18:00:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 8 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 474ms (Views: 470.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:00:08 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:12:52 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.4ms)
+  Rendered users/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 497ms (Views: 471.0ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:13:25 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JHrJ2bqWHKX3mXr9HoBdHr2vMj2OCJDdLwjADYNvpJy/d8T3mvhl5gByCHwAuLPL4cKVmJDwHb6SUUjl5E7twg==", "user"=>{"name"=>"mert", "email"=>"engy@yahoo.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('mert', 'engy@yahoo.com', '$2a$10$MAsndL6nNQH39Kii9EgdJOkKaivsf8cCFfO2mGudChQ2EGuQB80Oi', 1, '2015-05-11 15:13:25', '2015-05-11 15:13:25')[0m
+  [1m[35m (75.4ms)[0m  COMMIT
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 97.0ms
+
+Sent mail to engy@yahoo.com (6.7ms)
+Date: Mon, 11 May 2015 18:13:25 +0300
+From: engy.elmoshrify@gmail.com
+To: engy@yahoo.com
+Message-ID: <5550c71589255_d733fa19b148bac902d4@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 290ms (ActiveRecord: 76.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-05-11 18:13:25 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 9 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 485ms (Views: 480.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:13:26 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:14:20 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.8ms)
+  Rendered users/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 421ms (Views: 420.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:14:34 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iofXQQzR/GaV/fpdtXC+guMS/FSRbI+N3xEcyTjKSXYRitpvLL+FJWIWiNyrSFBXv39b8Y+UAu5iSJQhX+sAKA==", "user"=>{"name"=>"mert", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('mert', 'engy.elmoshrify@gmail.com', '$2a$10$zKQrpjOtD./DGqIvt.LcLeHvEcNqaAJKOWg2./PDl5HGAGVg78Lty', 0, '2015-05-11 15:14:34', '2015-05-11 15:14:34')
+  [1m[36m (78.9ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 91.2ms
+
+Sent mail to engy.elmoshrify@gmail.com (6.1ms)
+Date: Mon, 11 May 2015 18:14:34 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550c75a4db0f_d733fa191d8e7b89039c@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 275ms (ActiveRecord: 79.7ms)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2015-05-11 18:14:34 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 458ms (Views: 455.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:14:34 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.6ms)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2015-05-11 18:16:25 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 427ms (Views: 425.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:16:26 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (36.0ms)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2015-05-11 18:17:01 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  app/controllers/users_controller.rb:71:in `set_user'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (32.9ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-05-11 18:17:04 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 491ms (Views: 489.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:17:08 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.7ms)
+  Rendered users/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 495ms (Views: 493.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:17:22 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H93illDjsPQCotV7t76IzwSQXUW8pDWiPVJTsycv7D+E0O+4cI3Jt/VJp/qphmYaWP364KJcuMGAC9tbQA6lYQ==", "user"=>{"name"=>"dofiod", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"1"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('dofiod', 'engy.elmoshrify@gmail.com', '$2a$10$Tm4ufuOl5D5yDfpEj9gSbud1jtaUW.D52ykS/Rq6m7Vr1sS83P/8u', 1, '2015-05-11 15:17:23', '2015-05-11 15:17:23')[0m
+  [1m[35m (187.0ms)[0m  COMMIT
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.2ms)
+
+UserMailer#welcome_email: processed outbound mail in 68.8ms
+
+Sent mail to engy.elmoshrify@gmail.com (7.3ms)
+Date: Mon, 11 May 2015 18:17:23 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550c80343889_d733fa19ad26d089044a@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 359ms (ActiveRecord: 188.3ms)
+
+
+Started GET "/users/11" for 127.0.0.1 at 2015-05-11 18:17:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 11 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 457ms (Views: 454.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:17:23 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (23.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (45.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:19:42 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (7.0ms)
+  Rendered users/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 439ms (Views: 438.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:20:01 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UIu0dFLHri48J6xHqS0qsgMG8qzU4bUMvsBwpNCQPsnLhrlacqnXbcvM3sa3FcRnX2tVCcoZOG8DmfhMt7F3lw==", "user"=>{"name"=>"mert", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "commit"=>"Submit !"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('mert', 'engy.elmoshrify@gmail.com', '$2a$10$g/CFuytBmbPk4MCq0vEgKuKb0l0a79P77DDv6rmAo8qLZadO9mOMa', 0, '2015-05-11 15:20:01', '2015-05-11 15:20:01')
+  [1m[36m (52.8ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.2ms)
+
+UserMailer#welcome_email: processed outbound mail in 52.1ms
+
+Sent mail to engy.elmoshrify@gmail.com (5.0ms)
+Date: Mon, 11 May 2015 18:20:01 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550c8a13c4e5_d733fa190bc0978905f5@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 205ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2015-05-11 18:20:01 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 493ms (Views: 489.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:20:01 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.4ms)
+
+
+Started GET "/meetups/" for 127.0.0.1 at 2015-05-11 18:20:11 +0300
+Processing by MeetupsController#index as HTML
+  [1m[36mMeetup Load (0.4ms)[0m  [1mSELECT `meetups`.* FROM `meetups`[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered meetups/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 505ms (Views: 490.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/meetups/13" for 127.0.0.1 at 2015-05-11 18:20:17 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mMeetup Load (0.7ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 13 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.6ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '13') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 480ms (Views: 459.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/meetups/13/events" for 127.0.0.1 at 2015-05-11 18:20:23 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"meetup_id"=>"13"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 13 LIMIT 1
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`meetup_id` = 13[0m
+  Rendered events/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 482ms (Views: 461.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/meetups/13/events/1" for 127.0.0.1 at 2015-05-11 18:20:25 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"meetup_id"=>"13", "id"=>"1"}
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mMeetup Load (0.3ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 13 LIMIT 1[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 13 AND `events`.`id` = 1 LIMIT 1
+  [1m[36mUserevent Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `userevents` WHERE (user_id = 5 AND event_id = '1') LIMIT 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`event_id` = 1
+  Rendered events/show.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 507ms (Views: 484.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/meetups/" for 127.0.0.1 at 2015-05-11 18:22:36 +0300
+Processing by MeetupsController#index as HTML
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT `meetups`.* FROM `meetups`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1  [["id", 4]]
+  Rendered meetups/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 475ms (Views: 472.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/meetups/13" for 127.0.0.1 at 2015-05-11 18:22:42 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mMeetup Load (0.3ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 13 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.2ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = 5 AND meetup_id = '13') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 439ms (Views: 434.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/meetups/13/events" for 127.0.0.1 at 2015-05-11 18:22:49 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"meetup_id"=>"13"}
+  [1m[35mMeetup Load (0.2ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 13 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`meetup_id` = 13[0m
+  Rendered events/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 441ms (Views: 438.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/meetups/13/events/1" for 127.0.0.1 at 2015-05-11 18:24:04 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"meetup_id"=>"13", "id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 13 LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  `events`.* FROM `events` WHERE `events`.`meetup_id` = 13 AND `events`.`id` = 1 LIMIT 1
+  [1m[36mUserevent Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `userevents` WHERE (user_id = 5 AND event_id = '1') LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`event_id` = 1
+  Rendered events/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 426ms (Views: 418.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:30:54 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  Rendered users/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 465ms (Views: 447.6ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/users/12" for 127.0.0.1 at 2015-05-11 18:31:01 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yufbpiNyFkEbJim6Nzo7zwJidEpE2cx93CKlLqIjnnVR6taIAxxvAuzNWzspAtUaXg/T71ohQR5hey3GxQLXKw==", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 12[0m
+  [1m[35m (39.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 46ms (ActiveRecord: 40.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:31:01 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 484ms (Views: 481.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:31:05 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 307ms (Views: 306.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:31:15 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mMJpa2iNNZA39WxDzK058xYfXlxSydYGi0oSsbgeD2EDz2RFSONM08AeHsLSldcmSnL5+UwxW2U2E5pZ3z9GPw==", "user"=>{"name"=>"dofiod", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered users/_form.html.erb (4.1ms)
+  Rendered users/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 511ms (Views: 420.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:31:22 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dy8fX+IAtxNtpaH60u9GcJmIuxOape/hmAJwJZgAGW3sIhJxwm7OUJpO03vM16ilxeUctoRdYoIlW/jN/yFQMw==", "user"=>{"name"=>"dofiod", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "commit"=>"Submit !"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('dofiod', 'engy.elmoshrify@gmail.com', '$2a$10$hnsMvKw8jd5wiX9ZtSvGc.r9tj.cBZJkgr0YeuR5IN0JA3v4odnyu', 0, '2015-05-11 15:31:23', '2015-05-11 15:31:23')
+  [1m[36m (195.9ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 96.0ms
+
+Sent mail to engy.elmoshrify@gmail.com (7.7ms)
+Date: Mon, 11 May 2015 18:31:23 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550cb4b6368a_d733fa190c30f20906b9@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 413ms (ActiveRecord: 196.5ms)
+
+
+Started GET "/users/13" for 127.0.0.1 at 2015-05-11 18:31:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 466ms (Views: 463.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:31:24 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (36.8ms)
+
+
+Started GET "/users/13" for 127.0.0.1 at 2015-05-11 18:33:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 444ms (Views: 442.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:33:52 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (24.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (50.5ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-05-11 18:33:54 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 268ms (Views: 266.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/13" for 127.0.0.1 at 2015-05-11 18:33:58 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pjS45Z1i9izkV7ijnOXU+2Qe66WTgIVkbZ3PP5BvSjc9ObXLvQyPbxO8yiKC3TouOHNMAI14CAfQxEfX904DaQ==", "id"=>"13"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 13
+  [1m[36m (99.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 107ms (ActiveRecord: 101.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:33:58 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 350ms (Views: 348.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:33:59 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (5.9ms)
+  Rendered users/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 348ms (Views: 347.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:34:07 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y8SgwGz1fEdB6PpmCtC3C3T/n/xZYBlGS3araHpcN9L4ya3uTJsFBLYDiOcU6FneKJI4WUeYlCX2LyOAHX1+jA==", "user"=>{"name"=>"engy", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('engy', 'engy.elmoshrify@gmail.com', '$2a$10$Pf6sQsXHKkvnPlHPy69eW.0sht8P.mQpfn1tSA8u2O2WM1TbZYx9m', 0, '2015-05-11 15:34:07', '2015-05-11 15:34:07')
+  [1m[36m (95.0ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 94.8ms
+
+Sent mail to engy.elmoshrify@gmail.com (5.2ms)
+Date: Mon, 11 May 2015 18:34:07 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550cbef4cb0e_d733fa191a56758907c5@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 290ms (ActiveRecord: 96.3ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2015-05-11 18:34:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 467ms (Views: 465.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:34:07 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.8ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2015-05-11 18:37:18 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 467ms (Views: 465.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:37:19 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (37.1ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-05-11 18:37:22 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 421ms (Views: 418.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-05-11 18:37:26 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 373ms (Views: 371.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:37:27 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (36.7ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2015-05-11 18:37:34 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 412ms (Views: 409.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:37:34 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.2ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (43.3ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-05-11 18:38:54 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 443ms (Views: 441.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:38:57 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (9.8ms)
+  Rendered users/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 466ms (Views: 464.7ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'comments'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `comments`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'meetups'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `meetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'photos'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `photos`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tagmeetups'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `tagmeetups`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'tags'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `tags`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'userevents'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `userevents`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'usermeetups'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `usermeetups`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'projectrails_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:43:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (70.3ms)
+  Rendered users/new.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 926ms (Views: 876.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:43:35 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tCJfr5DlgsJDMuKuyoGD1zCN7wIT1unQJVKg5hEWOxUvL1KBsIv7gbTZkC/UuW0CbOBIpw0uZLOYCygOdjdySw==", "user"=>{"name"=>"hhhhh", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered users/_form.html.erb (5.1ms)
+  Rendered users/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 596ms (Views: 476.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:43:40 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  Rendered users/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 542ms (Views: 540.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2015-05-11 18:43:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 467ms (Views: 464.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:43:43 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (43.8ms)
+
+
+Started DELETE "/users/14" for 127.0.0.1 at 2015-05-11 18:43:47 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4VnWcp80FuWQvcPPnoWBtNJpU78dEsSvtdyFOnXHaNJ6VNtcv1pvpmdWsU6AvW9hjgT0GgPqScwIhQ3SEuYhjA==", "id"=>"14"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 14
+  [1m[36m (43.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 53ms (ActiveRecord: 44.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:43:47 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 455ms (Views: 453.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:43:50 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (12.5ms)
+  Rendered users/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 481ms (Views: 480.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:43:56 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m9l2wKSkbU1CsXoTYsCvMXEvkdHMpyMJjJuDrdyFgbcA1HvuhMoUDrVaCJJ8+EHkLUI2dNJfrmoxwgtFu6TI6Q==", "user"=>{"name"=>"hhhhh", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "commit"=>"Submit !"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (63.7ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('hhhhh', 'engy.elmoshrify@gmail.com', '$2a$10$SJAv5XjHD1GSmTFsSn.9Q.PQkNvks6L28z94RyiuyfskqO1TImnzu', 0, '2015-05-11 15:43:57', '2015-05-11 15:43:57')
+  [1m[36m (108.4ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (1.0ms)
+
+UserMailer#welcome_email: processed outbound mail in 271.7ms
+
+Sent mail to engy.elmoshrify@gmail.com (10708.6ms)
+Date: Mon, 11 May 2015 18:43:57 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550ce3d8fef5_26912327a103333b@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/15
+Completed 302 Found in 11278ms (ActiveRecord: 172.9ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2015-05-11 18:44:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 484ms (Views: 480.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:44:08 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (35.7ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-05-11 18:45:23 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  Rendered users/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 536ms (Views: 515.6ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/users/15" for 127.0.0.1 at 2015-05-11 18:45:39 +0300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kkCwiMU6KBEKhPPjkn8669A2zBh8uMrkANuSee76B6EJTb2m5VRRUv1vgWKMR9Q+jFtrvWJAR4e9ghqRidtO/w==", "id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 15[0m
+  [1m[35m (108.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 119ms (ActiveRecord: 109.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:45:39 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 475ms (Views: 471.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:45:41 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (7.8ms)
+  Rendered users/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 479ms (Views: 477.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:45:49 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tEgyNnE1Y38vTguTGS9/+6aaSElU+NP15g6yokNndOAvRT8YUVsaPNileRIHF5Eu+vfv7EoAXpZbVzpKJEY9vg==", "user"=>{"name"=>"hhhhh", "email"=>"engy.elmoshrify@gmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'engy.elmoshrify@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('hhhhh', 'engy.elmoshrify@gmail.com', '$2a$10$N4n0lVUIlggmg05zTwKzH.Liaz7HHn/yqA5sMyq/jRszkADzQD2/O', 0, '2015-05-11 15:45:49', '2015-05-11 15:45:49')[0m
+  [1m[35m (80.7ms)[0m  COMMIT
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 109.9ms
+
+Sent mail to engy.elmoshrify@gmail.com (4021.7ms)
+Date: Mon, 11 May 2015 18:45:49 +0300
+From: engy.elmoshrify@gmail.com
+To: engy.elmoshrify@gmail.com
+Message-ID: <5550cead8cdb9_26913feff1b5482c334b7@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/16
+Completed 302 Found in 4327ms (ActiveRecord: 81.5ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at 2015-05-11 18:45:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 16 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 456ms (Views: 453.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:45:54 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (34.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:46:09 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 436ms (Views: 433.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-11 18:46:11 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 470ms (Views: 468.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-05-11 18:46:13 +0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (10.7ms)
+  Rendered users/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 450ms (Views: 448.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-11 18:46:27 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N61i2aps6DDobGj8jZQl+rTLiDQ+DPIFWCFHzhAkKXGsoG/3igKRcx+HGn2TrMsv6KYvkSD0f2bleM8mdwVgLw==", "user"=>{"name"=>"mert", "email"=>"mertloka@hotmail.com", "password"=>"[FILTERED]", "isadmin"=>"0"}, "gender"=>"Female", "commit"=>"Submit !"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mertloka@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`name`, `email`, `password_digest`, `isadmin`, `created_at`, `updated_at`) VALUES ('mert', 'mertloka@hotmail.com', '$2a$10$4ErgEGmheM4DFdbo3QpA5.oYiYMUTzr1XYLA2pFM5tFRMxEBHk9dK', 0, '2015-05-11 15:46:27', '2015-05-11 15:46:27')
+  [1m[36m (70.4ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from block in create at /media/merit/01CECD067B890C00/iti/ruby/projectrails/app/controllers/users_controller.rb:33)
+  Rendered user_mailer/welcome_email.erb (0.1ms)
+
+UserMailer#welcome_email: processed outbound mail in 97.5ms
+
+Sent mail to mertloka@hotmail.com (3216.9ms)
+Date: Mon, 11 May 2015 18:46:27 +0300
+From: engy.elmoshrify@gmail.com
+To: mertloka@hotmail.com
+Message-ID: <5550ced3d680d_26913feff1b5482c335c9@merit.mail>
+Subject: Welcome message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to meetups.com
+
+You have successfully signed up  
+
+
+
+Thanks for joining and have a great day!
+
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 3489ms (ActiveRecord: 72.3ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2015-05-11 18:46:31 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 17 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 503ms (Views: 499.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2015-05-11 18:46:31 +0300
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/merit/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (48.7ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.6ms)

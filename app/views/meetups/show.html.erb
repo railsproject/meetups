@@ -17,7 +17,7 @@
 <% if  @join %>
 <span class = "btn btn-danger">  joined </span>
 <% else  %>
-<%= link_to  'Join',:action => "join" ,:id => @meetup , :class => "btn btn-danger"  %>&nbsp; |
+<%= link_to  'Join' , {:class => "btn btn-danger"} ,:action => "join" ,:id => @meetup   %>&nbsp; |
 <% end %>
 
 <%= link_to 'Edit', edit_meetup_path(@meetup) , :class => "btn btn-danger" %>&nbsp; |
@@ -44,14 +44,10 @@
 </p>
 
 <p>
-  <strong>Lat:</strong>
-  <%= @meetup.lat %>
+  <strong>country:</strong>
+  <%= @meetup.country %>
 </p>
 
-<p>
-  <strong>Long:</strong>
-  <%= @meetup.long %>
-</p>
 
 
 

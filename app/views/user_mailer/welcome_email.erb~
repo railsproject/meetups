@@ -1,0 +1,10 @@
+Welcome to meetups.com
+
+You have successfully signed up with MyFinance Your login credential is as below :
+
+username: <%= @username %> 
+password: <%= @password %> 
+
+To login to the site, just follow this link: <%=link_to @url, @url %> 
+
+Thanks for joining and have a great day!
