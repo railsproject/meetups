@@ -20760,3 +20760,52 @@ ActionView::Template::Error (undefined method `each' for nil:NilClass):
   Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
   Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /home/merit/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (33.4ms)
+
+
+Started GET "/meetups" for 127.0.0.1 at 2015-05-11 22:34:11 +0300
+Processing by MeetupsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT `meetups`.* FROM `meetups`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mTagmeetup Load (0.2ms)[0m  [1mSELECT `tagmeetups`.* FROM `tagmeetups`[0m
+  Rendered meetups/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 466ms (Views: 463.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/meetups" for 127.0.0.1 at 2015-05-11 22:34:15 +0300
+Processing by MeetupsController#index as HTML
+  [1m[35mTag Load (0.2ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mMeetup Load (0.3ms)[0m  [1mSELECT `meetups`.* FROM `meetups`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mTagmeetup Load (0.2ms)[0m  [1mSELECT `tagmeetups`.* FROM `tagmeetups`[0m
+  Rendered meetups/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 484ms (Views: 481.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/meetups/22/edit" for 127.0.0.1 at 2015-05-11 22:34:22 +0300
+Processing by MeetupsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mMeetup Load (0.5ms)[0m  SELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 22 LIMIT 1
+  Rendered meetups/edit.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 474ms (Views: 470.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/meetups/22" for 127.0.0.1 at 2015-05-11 22:34:28 +0300
+Processing by MeetupsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gvOU/KVMBWSE0I+AJAQlOXtkmvn0u0IKWWy0EWIaNy0Z/pnShSJ8J3M7/QE6PMvsJwk9XOpDz2nkNTz5BTt+cw==", "meetup"=>{"title"=>"meetup1", "user_id"=>"4", "disc"=>"hhhhhhhhhhhhhhhhhh", "lat"=>"31.192630999999995", "long"=>"29.905414800000003", "country"=>"Egypt"}, "commit"=>"Submit !", "id"=>"22"}
+  [1m[36mMeetup Load (0.2ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 22 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `meetups` SET `lat` = 31.192630999999995, `long` = 29.905414800000003, `updated_at` = '2015-05-11 19:34:28' WHERE `meetups`.`id` = 22[0m
+  [1m[35m (110.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/meetups/22
+Completed 302 Found in 120ms (ActiveRecord: 111.5ms)
+
+
+Started GET "/meetups/22" for 127.0.0.1 at 2015-05-11 22:34:29 +0300
+Processing by MeetupsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mMeetup Load (0.7ms)[0m  [1mSELECT  `meetups`.* FROM `meetups` WHERE `meetups`.`id` = 22 LIMIT 1[0m
+  [1m[35mUsermeetup Exists (0.2ms)[0m  SELECT  1 AS one FROM `usermeetups` WHERE (user_id = NULL AND meetup_id = '22') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered meetups/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 482ms (Views: 476.3ms | ActiveRecord: 1.1ms)
